@@ -38,3 +38,16 @@ module "storage" {
   region_code         = var.region_code
   tags                = local.tags
 }
+data "azurerm_client_config" "current" {}
+
+module "keyvault" {
+  source                   = "../../modules/keyvault"
+  resource_group_name      = module.rg_main.name
+  location                 = var.location
+  env                      = var.env
+  workload                 = "aiops"
+  region_code              = var.region_code
+  tenant_id                = data.azurerm_client_config.current.tenant_id
+  purge_protection_enabled = var.keyvault_purge_protection
+  tags                     = local.tags
+}
