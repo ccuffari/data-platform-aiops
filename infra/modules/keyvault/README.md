@@ -39,3 +39,12 @@ Azure Key Vault con RBAC abilitato. Contiene i segreti della piattaforma
 ## Upload di un segreto (una-tantum, manuale)
 
 Vedi `docs/06-secrets.md`.
+## Naming
+
+Il nome del vault include un suffisso random (andom_integer.kv_suffix)
+per evitare collisioni globali: le Key Vault hanno nomi unici su tutto Azure,
+quindi nomi deterministici possono essere gia' presi da altri tenant.
+
+Esempio: kv-aiops-dev-weu-7842.
+
+Il suffisso e' stabile finche' il keepers non cambia (env + prefisso).
