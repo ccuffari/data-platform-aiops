@@ -10,6 +10,12 @@ on:
 permissions:
   contents: read
 
+# Serializza TUTTI i run di questo workflow: un solo apply alla volta.
+# Senza, push ravvicinati causano collisioni sui lock di stato.
+concurrency:
+  group: terraform-apply-main
+  cancel-in-progress: false
+
 env:
   ARM_CLIENT_ID:       ${{ secrets.AZURE_CLIENT_ID }}
   ARM_CLIENT_SECRET:   ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -45,7 +51,7 @@ jobs:
         run: terraform init -input=false -no-color
 
       - name: terraform plan
-        run: terraform plan -input=false -no-color -out=tfplan
+        run: terraform plan -input=false -no-color -lock-timeout=5m -out=tfplan
 
       - name: terraform apply
-        run: terraform apply -input=false -no-color tfplan
+        run: terraform apply -input=false -no-color -lock-timeout=5m tfplan
