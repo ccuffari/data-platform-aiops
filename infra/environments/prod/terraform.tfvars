@@ -2,5 +2,6 @@ env         = "prod"
 region_code = "weu"
 location    = "westeurope"
 owner       = "ccuffari"
-cost_center = "internal-lab-2"
+cost_center = "internal-lab"
+
 
