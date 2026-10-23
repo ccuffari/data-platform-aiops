@@ -28,3 +28,8 @@ variable "cost_center" {
   description = "Cost center tag"
   type        = string
 }
+variable "keyvault_purge_protection" {
+  description = "Abilita purge protection sul Key Vault (true in prod)"
+  type        = bool
+  default     = false
+}

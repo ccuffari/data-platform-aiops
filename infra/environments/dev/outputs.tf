@@ -12,3 +12,10 @@ output "storage_account_name" {
 output "storage_primary_blob_endpoint" {
   value = module.storage.primary_blob_endpoint
 }
+output "keyvault_name" {
+  value = module.keyvault.name
+}
+
+output "keyvault_uri" {
+  value = module.keyvault.vault_uri
+}
