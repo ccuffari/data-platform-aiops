@@ -35,3 +35,8 @@ local.settings.json
 .idea/
 .DS_Store
 Thumbs.db
+
+# File spurio Windows
+null
+NUL
+

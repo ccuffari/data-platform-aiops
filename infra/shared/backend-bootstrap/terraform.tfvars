@@ -1,0 +1,5 @@
+location          = "westeurope"
+region_code       = "weu"
+owner             = "ccuffari"
+cost_center       = "internal-lab"
+cicd_sp_object_id = "4116e3fb-cb4b-4179-860e-2eb4bfdd2951"
