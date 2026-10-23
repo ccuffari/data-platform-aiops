@@ -29,3 +29,12 @@ module "rg_main" {
   location = var.location
   tags     = local.tags
 }
+module "storage" {
+  source              = "../../modules/storage"
+  resource_group_name = module.rg_main.name
+  location            = var.location
+  env                 = var.env
+  workload            = "aiops"
+  region_code         = var.region_code
+  tags                = local.tags
+}
