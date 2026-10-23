@@ -10,8 +10,7 @@ on:
 permissions:
   contents: read
 
-# Serializza TUTTI i run di questo workflow: un solo apply alla volta.
-# Senza, push ravvicinati causano collisioni sui lock di stato.
+# Serializza TUTTI i run di questo workflow
 concurrency:
   group: terraform-apply-main
   cancel-in-progress: false
