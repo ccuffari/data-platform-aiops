@@ -1,0 +1,1 @@
+# Variabili del modulo monitoring
