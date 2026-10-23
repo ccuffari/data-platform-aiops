@@ -43,3 +43,4 @@ Se git usa OpenSSL (default di Git for Windows), il clone fallisce con
 
 - Migrazione a OIDC federato GitHub -> Azure (elimina `AZURE_CLIENT_SECRET`)
 - Restringimento del ruolo `Contributor` ai soli RG della Data Platform
+
